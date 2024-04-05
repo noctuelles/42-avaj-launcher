@@ -5,5 +5,4 @@ import com.plouvel.avajlauncher.exception.ParsingException;
 
 interface LineParsingStrategy {
     public Flyable parseLine(String line) throws ParsingException;
-
 }

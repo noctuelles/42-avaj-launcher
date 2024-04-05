@@ -12,6 +12,7 @@ import com.plouvel.avajlauncher.exception.ParsingException;
 
 public class FileParser extends Parser implements AutoCloseable {
     private BufferedReader bufferedReader;
+    private ParserResult parserResult;
     private String currentLine;
     private int currentLineNbr;
 
@@ -20,11 +21,16 @@ public class FileParser extends Parser implements AutoCloseable {
 
         this.bufferedReader = new BufferedReader(new FileReader(fileName));
         this.currentLine = null;
+        this.parserResult = null;
         this.currentLineNbr = 0;
     }
 
     @Override
     public ParserResult parse() throws ParsingException {
+        if (this.parserResult != null) {
+            return this.parserResult;
+        }
+
         try {
             int nbrSimulation = 0;
             List<Flyable> flyables = new ArrayList<>();
@@ -39,8 +45,9 @@ public class FileParser extends Parser implements AutoCloseable {
                     flyables.add(this.lineParsingStrategy.parseLine(this.currentLine));
                 }
             }
+            this.parserResult = new ParserResult(nbrSimulation, flyables);
 
-            return new ParserResult(nbrSimulation, flyables);
+            return this.parserResult;
         } catch (IOException e) {
             throw new ParsingException(this.currentLine, "a system error occured", e);
         }
