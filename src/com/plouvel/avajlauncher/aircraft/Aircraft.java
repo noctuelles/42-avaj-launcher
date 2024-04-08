@@ -1,8 +1,8 @@
 package com.plouvel.avajlauncher.aircraft;
 
-import com.plouvel.avajlauncher.Coordinate;
 import com.plouvel.avajlauncher.Flyable;
 import com.plouvel.avajlauncher.WeatherType;
+import com.plouvel.avajlauncher.parser.Coordinate;
 
 public abstract class Aircraft extends Flyable {
     protected long id;

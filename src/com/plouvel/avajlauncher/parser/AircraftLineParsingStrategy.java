@@ -3,7 +3,6 @@ package com.plouvel.avajlauncher.parser;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.plouvel.avajlauncher.Coordinate;
 import com.plouvel.avajlauncher.Flyable;
 import com.plouvel.avajlauncher.exception.InvalidAircraftType;
 import com.plouvel.avajlauncher.exception.ParsingException;

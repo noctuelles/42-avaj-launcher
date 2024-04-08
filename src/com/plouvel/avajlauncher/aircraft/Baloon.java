@@ -1,6 +1,6 @@
 package com.plouvel.avajlauncher.aircraft;
 
-import com.plouvel.avajlauncher.Coordinate;
+import com.plouvel.avajlauncher.parser.Coordinate;
 
 public class Baloon extends Aircraft {
 

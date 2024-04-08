@@ -5,7 +5,6 @@ BIN_FOLDER=bin
 MAIN=com.plouvel.avajlauncher.App
 
 SRCS=com/plouvel/avajlauncher/App.java \
-	 com/plouvel/avajlauncher/Coordinate.java \
 	 com/plouvel/avajlauncher/Flyable.java \
 	 com/plouvel/avajlauncher/Tower.java \
 	 com/plouvel/avajlauncher/WeatherTower.java \
@@ -21,6 +20,7 @@ SRCS=com/plouvel/avajlauncher/App.java \
 	 com/plouvel/avajlauncher/parser/AircraftLineParsingStrategy.java \
 	 com/plouvel/avajlauncher/parser/LineParsingStrategy.java \
 	 com/plouvel/avajlauncher/parser/FileParser.java \
+	 com/plouvel/avajlauncher/parser/Coordinate.java \
 	 com/plouvel/avajlauncher/parser/Parser.java \
 	 com/plouvel/avajlauncher/parser/ParserResult.java
 

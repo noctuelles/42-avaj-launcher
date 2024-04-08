@@ -1,11 +1,11 @@
 package com.plouvel.avajlauncher.factory;
 
-import com.plouvel.avajlauncher.Coordinate;
 import com.plouvel.avajlauncher.Flyable;
 import com.plouvel.avajlauncher.aircraft.Baloon;
 import com.plouvel.avajlauncher.aircraft.Helicopter;
 import com.plouvel.avajlauncher.aircraft.JetPlane;
 import com.plouvel.avajlauncher.exception.InvalidAircraftType;
+import com.plouvel.avajlauncher.parser.Coordinate;
 
 public class AircraftFactory {
     private static long idSeq = 0;

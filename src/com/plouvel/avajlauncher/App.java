@@ -4,7 +4,6 @@ import com.plouvel.avajlauncher.parser.ParserResult;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;

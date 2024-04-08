@@ -1,11 +1,11 @@
-package com.plouvel.avajlauncher;
+package com.plouvel.avajlauncher.parser;
 
 public class Coordinate {
     private int longitude;
     private int latitude;
     private int height;
 
-    public Coordinate(int longitude, int latitude, int height) {
+    Coordinate(int longitude, int latitude, int height) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.height = height;
