@@ -3,7 +3,10 @@ package com.plouvel.avajlauncher;
 import com.plouvel.avajlauncher.parser.ParserResult;
 
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -13,8 +16,10 @@ import com.plouvel.avajlauncher.parser.FileParser;
 import java.util.List;
 
 public class App {
+    public static String outFilename = "simulation.txt";
+
     public static void printUsage() {
-        System.err.println("Usage : <scenario_file>");
+        System.err.println("Usage : <scenario_filename>");
     }
 
     public static void main(String[] args) {
@@ -23,8 +28,9 @@ public class App {
             System.exit(1);
         }
 
-        try (FileParser parser = new FileParser(args[0], new AircraftLineParsingStrategy())) {
-            WeatherTower weatherTower = new WeatherTower(System.out);
+        try (FileParser parser = new FileParser(args[0], new AircraftLineParsingStrategy());
+                PrintStream printStream = new PrintStream(new FileOutputStream(outFilename, false))) {
+            WeatherTower weatherTower = new WeatherTower(printStream);
             ParserResult parserResult = parser.parse();
             List<Flyable> flyables = new ArrayList<>(parserResult.flyables());
 
@@ -44,7 +50,7 @@ public class App {
             System.err.println(
                     "An error occured during the parsing of the file \"" + args[0] + "\":\n\n" + e.getMessage());
         } catch (IOException e) {
-            System.err.println("An error occured closing file \"" + args[0] + "\" : " + e.getMessage());
+            System.err.println("An error I/O error occured \"" + args[0] + "\" : " + e.getMessage());
         }
     }
 }
