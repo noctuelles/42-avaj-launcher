@@ -31,7 +31,7 @@ public class Baloon extends Aircraft {
 
     @Override
     protected void onSunnyWeather() {
-        this.coordinate.setLatitude(this.coordinate.getLatitude() + 2);
+        this.coordinate.setLongitude(this.coordinate.getLongitude() + 2);
         this.coordinate.setHeight(this.coordinate.getHeight() + 4);
 
         this.weatherTower.broadcastMessageFrom(this,
