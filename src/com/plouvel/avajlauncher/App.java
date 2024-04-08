@@ -44,7 +44,7 @@ public class App {
             System.err.println(
                     "An error occured during the parsing of the file \"" + args[0] + "\":\n\n" + e.getMessage());
         } catch (IOException e) {
-            System.err.println("An error occured closing file \":" + args[0] + "\" : " + e.getMessage());
+            System.err.println("An error occured closing file \"" + args[0] + "\" : " + e.getMessage());
         }
     }
 }
