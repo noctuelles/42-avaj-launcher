@@ -3,7 +3,6 @@ SRCS_FOLDER=src
 BIN_FOLDER=bin
 
 MAIN=com.plouvel.avajlauncher.App
-SCENARIO_FILE=scenario.txt
 
 SRCS=com/plouvel/avajlauncher/App.java \
 	 com/plouvel/avajlauncher/Coordinate.java \
