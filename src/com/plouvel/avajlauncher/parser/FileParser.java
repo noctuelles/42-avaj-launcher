@@ -47,9 +47,14 @@ public class FileParser extends Parser implements AutoCloseable {
             }
             this.parserResult = new ParserResult(nbrSimulation, flyables);
 
+            if (nbrSimulation == 0 || flyables.size() == 0) {
+                throw new ParsingException(this.currentLine,
+                        "You need to provide at least the simulation number and one aircraft");
+            }
+
             return this.parserResult;
         } catch (IOException e) {
-            throw new ParsingException(this.currentLine, "a system error occured", e);
+            throw new ParsingException(this.currentLine, "a i/o error occured", e);
         }
     }
 

@@ -26,7 +26,6 @@ public class ParsingException extends Exception {
         this.indexLastMatch = indexLastMatch;
     }
 
-
     public ParsingException(String line, String reason, int indexLastMatch, Throwable cause) {
         super(cause);
         this.line = line;
@@ -36,6 +35,10 @@ public class ParsingException extends Exception {
 
     @Override
     public String getMessage() {
+        if (this.line == null) {
+            return this.reason;
+        }
+
         if (this.indexLastMatch != -1) {
             return String.format("\"%s\" : %s\n%s", this.line, this.reason,
                     String.format("%" + (this.indexLastMatch + 2) + "c", '^'));
