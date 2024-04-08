@@ -2,6 +2,8 @@ package com.plouvel.avajlauncher;
 
 import java.util.Random;
 
+import com.plouvel.avajlauncher.parser.Coordinate;
+
 public class WeatherProvider {
     private static WeatherProvider instance = null;
     private Random random;
