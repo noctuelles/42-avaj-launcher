@@ -22,6 +22,8 @@ public class App {
     }
 
     public static void main(String[] args) {
+        int returnCode = 0;
+
         if (args.length != 1) {
             printUsage();
             System.exit(1);
@@ -44,12 +46,19 @@ public class App {
                 weatherTower.changeWeather();
             }
         } catch (FileNotFoundException e) {
-            System.err.println("An error occured opening file \":" + args[0] + "\" : " + e.getMessage());
+            System.err.println("An error occured opening file \"" + args[0] + "\" : " + e.getMessage());
+            returnCode = 1;
         } catch (ParsingException e) {
             System.err.println(
                     "An error occured during the parsing of the file \"" + args[0] + "\":\n\n" + e.getMessage());
+            returnCode = 1;
         } catch (IOException e) {
             System.err.println("An error I/O error occured \"" + args[0] + "\" : " + e.getMessage());
+            returnCode = 1;
+        }
+
+        if (returnCode != 0) {
+            System.exit(returnCode);
         }
     }
 }
